@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title    
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+   
+    block content
+    h1 Inquires List
+    table
+        thead
+            tr
+                th  Name
+                th  Email
+                th  Message
+                th  Newsletter
+                th  Date
+        tbody
+            each key in json   
+                tr
+                    td  !{key.name}
+                    td  !{key.email}
+                    td  !{key.message}
+                    td  !{key.newsletter}
+                    td  !{key.date}
+
+
+block scripts
+      script(src='/javascripts/jquery-3.4.1.min.js')
+         script(src='/javascripts/bootstrap.min.js')
