@@ -18,9 +18,7 @@
   },
   "scripts": {
     "compile": [
-      "chmod -R 777 inquires.json",
-      "chmod 755 etc/",
-      "chmod 644 etc/config.php"
+      "chmod -R 777 inquires.json"      
     ]
   }
 }
