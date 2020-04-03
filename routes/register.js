@@ -9,6 +9,8 @@ var options = {'hl': 'en'};
 var recaptcha = new Recaptcha('6Le4ZuYUAAAAAOeh5-cPBI6ntbcJvXFYh50e8X_x', '6Le4ZuYUAAAAAOqKg59KlXenI-NGfquk1aFQOICM', options);
 
 
+
+
 var app = express();
 
 //required by express-recaptcha in order to get data from body or query.
@@ -20,7 +22,8 @@ router.post('/', [
     //validate email
     check('email').isEmail()
 ], recaptcha.middleware.verify, function (req, res, next) {
-    console.log(req.recaptcha);
+    //load host
+    var host = req.app.get('host');  
     if (!req.recaptcha.error) {
         try {
             /*GET TODAY'S DATE*/
@@ -68,7 +71,7 @@ router.post('/', [
     if (!errors.isEmpty()) {
         res.render('register', {title: 'Tasty Treats - Inquiry Send', msg: 'Email is invalid, try again.'});
     } else {
-        res.render('register', {title: 'Tasty Treats - Inquiry Send', msg: 'Your inquiry was sent!'});
+        res.render('register', {title: 'Tasty Treats - Inquiry Send', msg: 'Your inquiry was sent!', host: host});
     }
 });
 

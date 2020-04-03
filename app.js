@@ -8,7 +8,11 @@ var indexRouter = require('./routes/index');
 var registerRouter = require('./routes/register');
 var inquiryRouter = require('./routes/inquires');
 
+
 var app = express();
+
+//configure the host
+app.set('host', "https://node-inquiry.herokuapp.com/");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
