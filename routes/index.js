@@ -14,9 +14,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 /* GET home page. */
 router.get('/', recaptcha.middleware.render, function (req, res, next) {
-
-
-
     //render view index.pug
     res.render('index', {title: 'Tasty Treats - Inquiry', captcha: res.recaptcha});
 });
