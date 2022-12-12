@@ -9,7 +9,7 @@
     "convert-array-to-csv": "^1.0.10",
     "cookie-parser": "^1.4.5",
     "debug": "~2.6.9",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-recaptcha": "^5.0.1",
     "express-validator": "^6.4.0",
     "http-errors": "^1.7.3",
